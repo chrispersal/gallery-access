@@ -1,4 +1,5 @@
 const mainimage = document.getElementById("imageBank");
+document.querySelectorAll("#thumbnails");
 const imageBank = [
   {
     src: "./images/senorloco.JPG",
@@ -30,14 +31,13 @@ document.createElement("img");
 document.getElementById("btNext").onclick = () => changeimg(1);
 document.getElementById("btPrev").onclick = () => changeimg(-1);
 
-function changeimg(direction) {
-  currentIndex += direction;
+function changeimg(cycle) {
+  currentIndex += cycle;
   if (currentIndex >= imageBank.length) currentIndex = 0;
   if (currentIndex < 0) currentIndex = imageBank.length - 1;
   mainimage.src = imageBank[currentIndex].src;
   console.log(currentIndex);
 }
-
 // Small version of each picture on the page.
 // Each needs an eventListener so they're clickable to change mainimage
 // Add next and previous buttons
